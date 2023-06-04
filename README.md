@@ -1,6 +1,6 @@
 >HOW TO USE 如何食用：  
 
-`$file = new Replay('YOUR FILE PATH', START TICK);`  
+`$file = new Replay('YOUR FILE PATH', START POS);`  
 `$magicNumber = $file -> ReadInt32();`  
 `$posdata['formatVersion'] = $file -> ReadInt8();`  
 `$posdata['replayType'] = $file -> ReadInt8();`  
