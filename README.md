@@ -25,8 +25,8 @@
 `$posdata['TickData'] = $file ->ReadTickData($posdata['tickCount']);`  
 now `$posdata` is all your need  
 
-**plz dont change the code order, will make it wont work**  
-**注意，修改代码顺序会导致无法使用，除非你知道要修改什么.....**  
+**plz dont change the code order, may make it wont work**  
+**注意，修改代码顺序可能会导致无法使用，除非你知道要修改什么.....**  
 
-**only support replay formatVersion 2**  
+**only support replayfile formatVersion 2**  
 **只支持 formatVersion 2 的 replay （好像没见过 1 就没写）**
