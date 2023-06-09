@@ -1,3 +1,4 @@
+# parse GOKZ replay file
 >HOW TO USE 如何食用：  
 
 `$file = new Replay('YOUR FILE PATH', START BYTE);`  
