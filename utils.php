@@ -1,8 +1,8 @@
 <?
-	/*
-		简易php gokzreplay parser
-		auth bklol
-	*/
+    /*
+        简易php gokzreplay parser
+        auth bklol
+    */
 	class Replay 
 	{
 		
@@ -10,16 +10,15 @@
 		private $replayfile;
 		private $readpoint;
 
-		public function __construct($path, $readpoint)
+		public function __construct($file, $readpoint = 0, $usefilepath = false)
 		{
-			if(!file_exists($path))
-				throw new Exception("file $path dont exists");
-				
-			$this -> replayfile = file_get_contents($path);
+			$this -> replayfile = $usefilepath ? file_get_contents($file) : $file;
+			if($this -> replayfile == null)
+				throw new Exception("file $file dont exists");
 			$this -> readpoint = $readpoint;
 			$this -> ReplayData['magicNumber'] = $this -> ReadInt32();
 			if($this -> ReplayData['magicNumber'] != 0x676F6B7A)
-				throw new Exception("Failed to load invalid replay file $path");
+				throw new Exception("Failed to load invalid replay file $file");
 			$this -> ReplayData['formatVersion'] = $this -> ReadInt8();
 			switch($this -> ReplayData['formatVersion'])
 			{
@@ -177,35 +176,3 @@
 			$this -> readpoint  += $length;
 		}
 	}
-
-	$file = new Replay('1.replay', 0); //file path, skip byte
-	
-	// now you have replay json data
-	echo json_encode($file -> ReplayData);
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
