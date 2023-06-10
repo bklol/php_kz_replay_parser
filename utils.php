@@ -10,7 +10,7 @@
 		private $replayfile;
 		private $readpoint;
 
-		public function __construct($file, $readpoint = 0, $usefilepath = false)
+		public function __construct($file, $readpoint = 0, $usefilepath = true)
 		{
 			$this -> replayfile = $usefilepath ? file_get_contents($file) : $file;
 			if($this -> replayfile == null)
